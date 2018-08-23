@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "Tencent_View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="well with-header  with-footer">
+            <div class="header bordered-blue">Shiny Tencent_View</div>
+            <div class="buttons-preview">
+                <a href="javascript:Touch(1);" class="btn btn-default shiny">发送整机订单生产信息</a><br />
+                <a href="javascript:MachineOrderProductionInformationSend();" class="btn btn-default shiny">发送整机订单生产信息</a><br />
+                <a href="javascript:DemandForecastRequest();" class="btn btn-default shiny">获取需求预测</a><br />
+                <a href="javascript:TimerSupplyCapacitySend();" class="btn btn-default shiny">发送供应能力数据</a><br />
+                <a href="javascript:PartReceiveMsgSend();" class="btn btn-default shiny">发送部件订单验收信息</a><br />
+                <a href="javascript:TestRedis();" class="btn btn-danger shiny">测试Redis</a>
+                <a href="javascript:CaseRequest();" class="btn btn-blue shiny">轮询执行方案</a>
+                <table style="width:100%;">
+                    <tr>
+                        <td><input id="inpguid" type="text" value="77ca9186-370f-a7e6-df7a-287e9171e0b4" /></td>
+                        <td>
+                            <select id="selmsgType">
+                                <option value="PART_ORDER_ACCEPT">发送部件采购单信息</option>
+                                <option value="BTO_SUBMIT">发送订货单信息</option>
+                                <option value="ORDER_SUBMIT">订单配送信息,更新 ODM 配送信息及上架信息</option>
+                            </select>
+                        </td>
+                        <td><input id="inpmsgBody" type="text" value="BO_PR2018050910001" /></td>
+                    </tr>
+                </table>
+
+                <a href="javascript:void(0);" class="btn btn-sky shiny">Sky</a>
+                <a href="javascript:void(0);" class="btn btn-azure shiny">Azure</a>
+                <a href="javascript:void(0);" class="btn btn-palegreen shiny">Pale Green</a>
+                <a href="javascript:void(0);" class="btn btn-yellow shiny">Yellow</a>
+                <a href="javascript:void(0);" class="btn btn-darkorange shiny">Dark Orange</a>
+                <a href="javascript:void(0);" class="btn btn-magenta shiny">Magenta</a>
+                <a href="javascript:void(0);" class="btn btn-purple shiny">Purple</a>
+                <a href="javascript:void(0);" class="btn btn-maroon shiny">Maroon</a>
+            </div>
+            <table>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function Touch(value) {
+        var url = "/Client/";
+        var data = "";
+        if (value == 0) {
+            url += "TimerRequest";
+        }
+        if (value == 7) {
+            url += "CaseRequest";
+        }
+        $.ajax({
+            type: "Post",
+            url: url,
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function CaseRequest() {
+            var guid = $("#inpguid")[0].value;
+            var msgType = $("#selmsgType")[0].value;
+            var msgBody = $("#inpmsgBody")[0].value;
+        $.ajax({
+            type: "Post",
+            url: "/Client/CaseRequest",
+            data: {
+                guid: guid,
+                msgType: msgType,
+                msgBody: msgBody
+            },
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function MachineOrderProductionInformationSend() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/MachineOrderProductionInformationSend",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function DemandForecastRequest() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/DemandForecastRequest",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function TimerSupplyCapacitySend() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/TimerSupplyCapacitySend",
+            success: function (da) {
+                if (da.a == 0) {
+
+                }
+                else {
+
+                }
+                alert(result);
+            }
+        })
+    }
+    function PartReceiveMsgSend() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/PartReceiveMsgSend",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function TestRedis() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/Redis",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+</script>

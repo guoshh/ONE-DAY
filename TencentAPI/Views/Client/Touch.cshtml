@@ -1,0 +1,82 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Touch</title>
+</head>
+<body>
+    <div> 
+        <input id="Button1" type="button"  onclick="Touch()" value="button" />
+        <input id="Button1" type="button" onclick="MachineOrderProductionInformationSend()" value="发送整机订单生产信息" />
+        <input id="Button1" type="button" onclick="DemandForecastRequest()" value="获取需求预测" />
+        <input id="Button1" type="button" onclick="TimerSupplyCapacitySend()" value="发送供应能力数据" />
+        <input id="Button1" type="button" onclick="PartReceiveMsgSend()" value="发送部件订单验收信息" />
+        <input id="Button1" type="button" onclick="TestRedis()" value="测试Redis" />
+
+    </div>
+</body>
+</html>
+<script>
+    function Touch()
+    {
+        $.ajax({
+            type: "Post",
+            url: "/Client/TimerRequest",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function MachineOrderProductionInformationSend() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/MachineOrderProductionInformationSend",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function DemandForecastRequest() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/DemandForecastRequest",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function TimerSupplyCapacitySend() {
+        $.ajax({
+            type: "Post",
+            url: "/Client/TimerSupplyCapacitySend",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function PartReceiveMsgSend()
+    {
+        $.ajax({
+            type: "Post",
+            url: "/Client/PartReceiveMsgSend",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+    function TestRedis()
+    {
+        $.ajax({
+            type: "Post",
+            url: "/Client/Redis",
+            success: function (result) {
+                alert(result);
+            }
+        })
+    }
+</script>

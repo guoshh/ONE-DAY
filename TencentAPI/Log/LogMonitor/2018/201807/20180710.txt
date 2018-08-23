@@ -1,0 +1,70 @@
+
+ 
+记录时间：2018-07-10 10:24:18,712 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+      Action执行时间监控：
+      ControllerName：ClientController
+      ActionName:Tencent_View
+      开始时间：2018/7/10 10:24:18
+      结束时间：2018/7/10 10:24:18
+      总 时 间：24秒
+        Form：
+ 
+
+ 
+记录时间：2018-07-10 10:24:20,916 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+      View视图生成时间监控：
+      ControllerName：ClientController
+      ViewName:Tencent_View
+      开始时间：2018/7/10 10:24:18
+      结束时间：2018/7/10 10:24:20
+      总 时 间：24秒
+        Form：
+ 
+
+ 
+记录时间：2018-07-10 10:25:02,697 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+      Action执行时间监控：
+      ControllerName：ClientController
+      ActionName:Tencent_View
+      开始时间：2018/7/10 10:25:02
+      结束时间：2018/7/10 10:25:02
+      总 时 间：0秒
+        Form：
+ 
+
+ 
+记录时间：2018-07-10 10:25:02,700 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+      View视图生成时间监控：
+      ControllerName：ClientController
+      ViewName:Tencent_View
+      开始时间：2018/7/10 10:25:02
+      结束时间：2018/7/10 10:25:02
+      总 时 间：0秒
+        Form：
+ 
+
+ 
+记录时间：2018-07-10 10:25:49,729 
+线程ID:[22] 
+日志级别：  INFO  
+跟踪描述：
+      Action执行时间监控：
+      ControllerName：ClientController
+      ActionName:MachineOrderProductionInformationSend
+      开始时间：2018/7/10 10:25:28
+      结束时间：2018/7/10 10:25:49
+      总 时 间：21223秒
+        Form：
+ 
